@@ -22,5 +22,5 @@
                 <p>Artist</p>
             </div>                
         </div>
-    </div> 
+    </div>
 @endsection
