@@ -18,7 +18,7 @@ class CreateJobsTable extends Migration
             $table->timestamps();
         });
     }
-
+ 
     /**
      * Reverse the migrations.
      *

@@ -8,3 +8,4 @@ class JobController extends Controller
 {
     //
 }
+ 
