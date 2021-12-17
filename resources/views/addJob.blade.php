@@ -13,15 +13,15 @@
             </div>
             <div class="form-group">
                 <label for="jobDescription">Job Desciption</label>
-                <textarea type="text" class="form-control" id="jobDescription" name="jobDescription" rows="4" cols="50"></textarea>          
+                <textarea type="text" class="form-control" id="jobDescription" name="jobDescription" rows="10" cols="50" placeholder="Position:&#10;Gender:&#10;PartTime/FullTime&#10;Skill Required:&#10;and so on"></textarea>          
             </div>
             <div class="form-group">
                 <label for="jobSalary">Job Salary</label>
-                <input type="number" class="form-control" id="jobSalary" name="jobSalary" min="0">                
+                <input type="number" class="form-control" id="jobSalary" name="jobSalary" min="1000">                
             </div>
             <div class="form-group">
                 <label for="numberOfHiring">Number of Hiring</label>
-                <input type="number" class="form-control" id="numberOfHiring" name="numberOfHiring" min="0">                
+                <input type="number" class="form-control" id="numberOfHiring" name="numberOfHiring" min="1">                
             </div>
 
             <div class="form-group">
