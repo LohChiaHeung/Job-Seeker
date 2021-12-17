@@ -12,9 +12,9 @@ class JobController extends Controller
 {
     //
     public function store(){
-        $r=request();  //received the data by GET or POST mothod 
+        $r=request(); 
         $image=$r->file('companyImage');        
-        $image->move('images',$image->getClientOriginalName());   //images is the location                
+        $image->move('images',$image->getClientOriginalName());              
         $imageName=$image->getClientOriginalName(); 
         $addJob=Job::create([
             'name'=>$r->jobName,
@@ -34,8 +34,16 @@ class JobController extends Controller
         ->leftjoin('categories','categories.id','=','jobs.CategoryID')
         ->select('jobs.*','categories.name as cName')
         ->get();
-        return view('showJob')
+        return view('viewJob')
         ->with('jobs',$viewJob);
+    }
+
+    public function delete($id){
+        
+        $deleteJob=Job::find($id);
+        $deleteJob->delete();
+        Session::flash('success',"Job was delete successfully!");
+        Return redirect()->route('viewJob');
     }
 }
 

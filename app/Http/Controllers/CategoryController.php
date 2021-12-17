@@ -18,7 +18,7 @@ class CategoryController extends Controller
         ]);
 
         Session::flash('success',"Category create succesful!");
-        Return redirect()->route('showCategory');
+        Return redirect()->route('viewCategory');
     }
 
     public function view(){
@@ -26,5 +26,12 @@ class CategoryController extends Controller
         Return view('showCategory')->with('categories',$viewCategory);
     }
 
+    public function delete($id){
+        
+        $deleteCategory=Category::find($id);
+        $deleteCategory->delete();
+        Session::flash('success',"Category was delete successfully!");
+        Return redirect()->route('viewCategory');
+    }
 }
  

@@ -17,7 +17,7 @@
                 <tr>
                     <td>{{$category->id}}</td>
                     <td>{{$category->name}}</td>
-                    <td></td>
+                    <td><a href="{{ route('deleteCategory',['id'=>$category->id])}}" class="btn btn-danger btn-xs" onClick="return confirm('Are you sure to delete?')">Delete</a></td>
                 </tr>
                 @endforeach
             </tbody>

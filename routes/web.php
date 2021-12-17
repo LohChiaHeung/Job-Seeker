@@ -35,6 +35,8 @@ Route::get('/showJob', [App\Http\Controllers\JobController::class, 'view'])->nam
 //1
 Route::get('/deleteJob/{id}',[App\Http\Controllers\JobController::class,'delete'])->name('deleteJob');
 
+Route::get('/deleteCategory/{id}',[App\Http\Controllers\CategoryController::class,'delete'])->name('deleteCategory');
+
 Route::get('editJob/{id}',[App\Http\Controllers\JobController::class,'edit'])->name('editJob');
 
 Route::get('/jobDetail/{id}',[App\Http\Controllers\JobController::class,'jobdetail'])->name('Job.detail');
