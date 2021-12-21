@@ -28,6 +28,7 @@ Route::get('/addJob', function () {
 Route::post('/addCategory', [App\Http\Controllers\CategoryController::class, 'store'])->name('storeCategory');
 Route::post('/addJob', [App\Http\Controllers\JobController::class, 'store'])->name('storeJob');
 Route::post('/updateJob', [App\Http\Controllers\JobController::class, 'update'])->name('updateJob');
+Route::post('/addWishlist', [App\Http\Controllers\WishlistController::class, 'add'])->name('add.to.wishlist');
 
 Route::get('/showCategory', [App\Http\Controllers\CategoryController::class, 'view'])->name('viewCategory');
 
@@ -40,6 +41,14 @@ Route::get('/deleteCategory/{id}',[App\Http\Controllers\CategoryController::clas
 Route::get('editJob/{id}',[App\Http\Controllers\JobController::class,'edit'])->name('editJob');
 
 Route::get('/jobDetail/{id}',[App\Http\Controllers\JobController::class,'jobdetail'])->name('Job.detail');
+
+Route::get('/listJobs', [App\Http\Controllers\JobController::class, 'listJob'])->name('jobs');
+
+Route::get('/jobDetail/{id}',[App\Http\Controllers\JobController::class,'jobdetail'])->name('job.detail');
+
+Route::get('/deleteWishlist/{id}',[App\Http\Controllers\WishlistController::class,'delete'])->name('delete.wishlist');
+
+Route::get('/wishlist', [App\Http\Controllers\WishlistController::class, 'showWishlist'])->name('show.wishlist');
 
 Auth::routes();
 

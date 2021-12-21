@@ -12,8 +12,20 @@
                 <input type="text" class="form-control" id="jobName" name="jobName">                
             </div>
             <div class="form-group">
-                <label for="jobDescription">Job Desciption</label>
-                <textarea type="text" class="form-control" id="jobDescription" name="jobDescription" rows="10" cols="50" placeholder="Position:&#10;Gender:&#10;PartTime/FullTime&#10;Skill Required:&#10;and so on"></textarea>          
+                <label for="gender">Gender Required</label>
+                <input type="text" class="form-control" id="gender" name="gender">                
+            </div>
+            <div class="form-group">
+                <label for="position">Position</label>
+                <input type="text" class="form-control" id="position" name="position">                
+            </div>
+            <div class="form-group">
+                <label for="FP">Full Time/Part Time</label>
+                <input type="text" class="form-control" id="FP" name="FP">                
+            </div>
+            <div class="form-group">
+                <label for="skill">Skill Required</label>
+                <input type="text" class="form-control" id="skill" name="skill">                
             </div>
             <div class="form-group">
                 <label for="jobSalary">Job Salary</label>
@@ -23,7 +35,10 @@
                 <label for="numberOfHiring">Number of Hiring</label>
                 <input type="number" class="form-control" id="numberOfHiring" name="numberOfHiring" min="1">                
             </div>
-
+            <div class="form-group">
+                <label for="Tel">Contact Number</label>
+                <input type="text" class="form-control" id="Tel" name="Tel">                
+            </div>
             <div class="form-group">
                 <label for="companyImage">Company Image(Logo)</label>
                 <input type="file" class="form-control" id="companyImage" name="companyImage">                

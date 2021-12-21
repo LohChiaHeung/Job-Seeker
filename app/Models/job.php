@@ -8,8 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Job extends Model
 {
     use HasFactory;
-    protected $fillable=['name','description','salary','companyImage','numberOfHiring','CategoryID'];
+    protected $fillable=['name','position','gender','skill','FullPart','salary','image','numberOfHiring','CategoryID','Tel'];
     public function product(){
         return $this->belongsTo('App\Models\Category');
+    }
+    public function wishlist(){
+        return $this->hasmany('App\Wishlist');
     }
 }
