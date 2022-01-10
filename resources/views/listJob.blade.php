@@ -1,5 +1,4 @@
 @extends('layout')
-
 @section('content')
 <div class="container fluid mx-10">
     <div class="row mb-3">
@@ -36,3 +35,4 @@
   transition: 0.3s;
 }
 </style>
+   
