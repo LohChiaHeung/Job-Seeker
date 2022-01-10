@@ -18,7 +18,7 @@
         </div>
         @endif
         <!--=========最上面的navigation bar===============-->
-        <nav class="navbar navbar-expand-lg navbar-light px-5" style="background-color: #e3f2fd;">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5" style="background-color:#235789;">
         <img src="{{asset('images/logo.JPG')}}" class="rounded-circle" alt="Job Seeker" width="30">&nbsp;
         <a class="navbar-brand" href="#">Job Seeker</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,7 @@
                 </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-primary my-2 my-sm-0 mx-1" type="submit"><i class="fa fa-search"></i></button>
+                <button class="btn btn-primary my-2 my-sm-0 mx-1" type="submit"><i class="fa fa-search"></i></button>
             </form>
             <button type="button" class="btn btn-primary" onClick="window.location.href='{{route('show.wishlist')}}'">
                 My Wishlist <span class="badge bg-danger">1</span>
@@ -116,9 +116,8 @@
     {
         padding: 0;
         margin: 0 ;
-        background: #f2f6e9;
+        background: #fdfffc;
     }
-
     .page-footer 
     {
         background-color: #222;
