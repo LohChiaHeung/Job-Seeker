@@ -39,8 +39,8 @@
                 <input type="number" class="form-control" id="numberOfHiring" name="numberOfHiring" min="1" value="{{$job->numberOfHiring}}">                
             </div>
             <div class="form-group">
-                <label for="tel">Number of Hiring</label>
-                <input type="text" class="form-control" id="tel" name="tel" value="{{$job->tel}}">                
+                <label for="Tel">Contact Number</label>
+                <input type="text" class="form-control" id="Tel" name="Tel" value="{{$job->Tel}}">                
             </div>
             <div class="form-group">
                 <label for="jobImage">job Image</label>

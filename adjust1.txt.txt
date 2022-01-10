@@ -1,0 +1,36 @@
+---FOLDER [views (blade.php)]---
+layout 
+- navbar "Link" ((apply temporary link to all page for checking / preview
+- wishlist navigation
+- navbar padding-5 ((mx-5
+- footer padding, copyright 
+
+addCategory 
+- min-height (adjust footer to botttom)
+
+showCategory 
+- min-height (adjust footer to botttom)
+
+showJob 
+- button spacing adjust
+
+editJob 
+- edit 8th form-group ((two number of hiring
+
+listJobs 
+- redesign layout to show job
+
+jobDetail 
+- adjust div
+- min-height (adjust footer to botttom)
+
+wishlist 
+- adjust table column ((hidden id input, remove no of hiring
+- adjust id passing to delete.wishlist ((pass wrong id (id->cid)
+- min-height (adjust footer to bottom)
+- column spelling error
+
+
+---FOLDER [Controller]---
+JobController 
+- add __construct() ((unable to add job to wishlist without login

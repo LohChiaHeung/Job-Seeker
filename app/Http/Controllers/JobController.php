@@ -10,7 +10,10 @@ use App\Models\Category;
 
 class JobController extends Controller
 {
-    //
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function store(){
         $r=request();  //received the data by GET or POST mothod 
         $image=$r->file('companyImage');        
