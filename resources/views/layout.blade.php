@@ -18,7 +18,7 @@
         </div>
         @endif
         <!--=========最上面的navigation bar===============-->
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <nav class="navbar navbar-expand-lg navbar-light px-5" style="background-color: #e3f2fd;">
         <img src="{{asset('images/logo.JPG')}}" class="rounded-circle" alt="Job Seeker" width="30">&nbsp;
         <a class="navbar-brand" href="#">Job Seeker</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,13 +30,20 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Temporary Link</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="{{route('storeCategory')}}">Add Category</a>
+                            <a class="dropdown-item" href="{{route('storeJob')}}">Add Job</a>
+                            <a class="dropdown-item" href="{{route('jobs')}}">List Job</a>
+                            <a class="dropdown-item" href="{{route('viewCategory')}}">Show Category</a>
+                            <a class="dropdown-item" href="{{route('viewJob')}}">Show Job</a>
+                    </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Category
-                        </a>
+                        Category</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">IT</a>
                         <a class="dropdown-item" href="#">Accountant</a>
@@ -46,10 +53,10 @@
                 </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+                <button class="btn btn-outline-primary my-2 my-sm-0 mx-1" type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <button type="button" class="btn btn-primary">
-                    My Wishlist <span class="badge bg-danger">0</span>
+            <button type="button" class="btn btn-primary" onClick="window.location.href='{{route('show.wishlist')}}'">
+                My Wishlist <span class="badge bg-danger">1</span>
             </button>
             </div>
         </nav>
@@ -57,7 +64,7 @@
 
         @yield('content')
         <!--==========footer===============-->
-        <footer class="page-footer">
+        <footer class="page-footer pt-4 pb-2">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-12">
@@ -73,7 +80,7 @@
                         <br/>+ 01 234 567 88
                         <br/>+ 01 234 567 89</p>
                     </div>
-                    <div class="footer-copyright text-center">© 2020 Copyright: MyWebsite.com</div>
+                    <div class="footer-copyright text-center pb-2s">© 2021 Copyright: wbs2021C.com</div>
                 </div>
             </div>
         </footer>

@@ -1,26 +1,29 @@
 @extends('layout')
 
 @section('content')
-		<div class="row">
-          @foreach($jobs as $job)    
-                        <div class="col-sm-4"> 
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{$job->name}}</h5>
-                                    <a href="{{ route('jobs', ['id' => $job->id]) }}"><img src="{{ asset('images/') }}/{{$job->image}}" alt="" class="img-fluid" width="300"></a>
-                                    <div class="card-content">
-                                        <p>Job Description</p><br>
-                                        Salary: RM {{$job->salary}} <br>
-                                        Gender: {{$job->gender}}<br>
-                                        Position: {{$job->position}}<br>
-                                        {{$job->FullPart}}<br>
-                                        Skill Required: {{$job->skill}}<br>
-                                        Contact Number:{{$job->Tel}}
-                                    </div>
-                                    <button style="float:right" class="btn btn-danger btn-xs">Add to Wishlist</button>
-                                </div>
-                            </div>
-                        </div>
-           @endforeach  
-		</div>
+<div class="container fluid mx-10">
+    <div class="row mb-3">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h3 class="mt-3">Jobs Available</h3>
+            <div class="row">
+                @foreach($jobs as $job)
+                <div class="col-sm-4 mb-2">
+                    <div class="card p-2" style="width:19rem;height:30rem">
+                        <h5 class="card-title" style="text-align:center; margin-top:7px">{{$job->name}}</h5>
+                        <img class="card-img-top img-fluid img-thumbnail" src="{{ asset('images/') }}/{{$job->image}}" alt="job" style="max-height:50%" >
+                        <div class="card-body" style="text-align:center;">
+                            Salary: RM {{$job->salary}} <br>
+                            Gender: {{$job->gender}}<br>
+                            Position: {{$job->position}}
+                        </div> 
+                        <a href="{{ route('job.detail', $job->id) }}" class="btn btn-primary" style="margin:auto;">View</a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
 @endsection    

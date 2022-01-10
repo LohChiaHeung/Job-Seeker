@@ -34,7 +34,8 @@
                         <td>{{$job->numberOfHiring}}</td>
                         <td>{{$job->cName}}</td>
                         <!-- 2 -->
-                        <td><a href="{{ route('editJob',['id'=>$job->id])}}" class="btn btn-warning btn-xs">Edit</a> <a href="{{ route('deleteJob',['id'=>$job->id])}}" class="btn btn-danger btn-xs" onClick="return confirm('Are you sure to delete?')">Delete</a></td>   
+                        <td><a href="{{ route('editJob',['id'=>$job->id]) }}" class="btn btn-warning btn-sm" style="margin-bottom:5px;">Edit</a> <br> 
+                        <a href="{{ route('deleteJob',['id'=>$job->id]) }}" class="btn btn-danger btn-sm" onClick="return confirm('Are you sure to delete?')">Delete</a>
                     </tr>
                     @endforeach
                 </tbody>
