@@ -20,7 +20,7 @@
         <!--=========最上面的navigation bar===============-->
         <nav class="navbar navbar-expand-lg navbar-dark px-5" style="background-color:#235789;">
         <img src="{{asset('images/logo.JPG')}}" class="rounded-circle" alt="Job Seeker" width="30">&nbsp;
-        <a class="navbar-brand" href="#">Job Seeker</a>
+        <a class="navbar-brand" href="{{route('welcome')}}">Job Seeker</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('welcome')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
