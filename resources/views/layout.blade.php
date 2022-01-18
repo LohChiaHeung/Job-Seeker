@@ -51,8 +51,9 @@
                     </div>
                     </li>
                 </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" action="{{route('search.careers')}}" method="POST">
+                @csrf
+                <input class="form-control mr-sm-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
                 <button class="btn btn-primary my-2 my-sm-0 mx-1" type="submit"><i class="fa fa-search"></i></button>
             </form>
             <button type="button" class="btn btn-primary" onClick="window.location.href='{{route('show.wishlist')}}'">

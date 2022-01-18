@@ -96,17 +96,24 @@ class JobController extends Controller
 
     public function viewIT(){
         $jobs=DB::table('jobs')->where('CategoryID','=','1')->get();
-        return view('listjob')->with('jobs',$jobs);
+        return view('listJob')->with('jobs',$jobs);
     }
 
     public function viewAccountant(){
         $jobs=DB::table('jobs')->where('CategoryID','=','2')->get();
-        return view('listjob')->with('jobs',$jobs);
+        return view('listJob')->with('jobs',$jobs);
     }
 
     public function viewArtist(){
         $jobs=DB::table('jobs')->where('CategoryID','=','3')->get();
-        return view('listjob')->with('jobs',$jobs);
+        return view('listJob')->with('jobs',$jobs);
+    }
+
+    public function searchCareer(){
+        $r=request();
+        $keyword=$r->keyword;
+        $jobs=DB::table('jobs')->where('name','like','%'.$keyword.'%')->get();
+        return view('listJob')->with('jobs',$jobs);
     }
 
 }

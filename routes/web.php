@@ -63,3 +63,5 @@ name('jobs.accountant');
 
 Route::get('/Artist',[App\Http\Controllers\JobController::class,'viewArtist'])->
 name('jobs.artist');
+
+Route::post('/searchCareers',[App\Http\Controllers\JobController::class,'searchCareer'])->name('search.careers');
