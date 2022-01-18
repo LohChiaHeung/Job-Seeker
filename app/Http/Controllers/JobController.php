@@ -93,4 +93,20 @@ class JobController extends Controller
         $jobs=job::all()->where('id',$id);
         return view("jobDetail")->with('jobs',$jobs);
     }
+
+    public function viewIT(){
+        $jobs=DB::table('jobs')->where('CategoryID','=','1')->get();
+        return view('listjob')->with('jobs',$jobs);
+    }
+
+    public function viewAccountant(){
+        $jobs=DB::table('jobs')->where('CategoryID','=','2')->get();
+        return view('listjob')->with('jobs',$jobs);
+    }
+
+    public function viewArtist(){
+        $jobs=DB::table('jobs')->where('CategoryID','=','3')->get();
+        return view('listjob')->with('jobs',$jobs);
+    }
+
 }

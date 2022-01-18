@@ -53,3 +53,12 @@ Route::get('/wishlist', [App\Http\Controllers\WishlistController::class, 'showWi
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/IT',[App\Http\Controllers\JobController::class,'viewIT'])->
+name('jobs.IT');
+
+Route::get('/Accountant',[App\Http\Controllers\JobController::class,'viewAccountant'])->
+name('jobs.accountant');
+
+Route::get('/Artist',[App\Http\Controllers\JobController::class,'viewArtist'])->
+name('jobs.artist');

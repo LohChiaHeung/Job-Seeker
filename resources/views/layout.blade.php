@@ -32,7 +32,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Temporary Link</a>
+                        Job Street</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="{{route('storeCategory')}}">Add Category</a>
                             <a class="dropdown-item" href="{{route('storeJob')}}">Add Job</a>
@@ -45,9 +45,9 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Category</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">IT</a>
-                        <a class="dropdown-item" href="#">Accountant</a>
-                        <a class="dropdown-item" href="#">Artist</a>
+                        <a class="dropdown-item" href="{{route('jobs.IT')}}">IT</a>
+                        <a class="dropdown-item" href="{{route('jobs.accountant')}}">Accountant</a> 
+                        <a class="dropdown-item" href="{{route('jobs.artist')}}">Artist</a>
                     </div>
                     </li>
                 </ul>
