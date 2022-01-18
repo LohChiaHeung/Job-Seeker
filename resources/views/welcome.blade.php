@@ -7,7 +7,7 @@
             </div>                    
         </div>
                 
-
+        <p class="Titles">Jobs Careers  </p>
         <div class="row" style="margin-top:20px;">
             <div class="col-sm-4" style="text-align: center;">
                 <img src="{{ asset('images/Accountant.jpg')}}" width=500 alt="" class="img-fluids" > 
@@ -34,5 +34,10 @@
     font-family:"Times New Roman", Times, serif;
     font-size:25px;
 }
+
+.Titles {
+    font-size:40px;
+    font-weight: bold;
+    text-align:center;
 }
 </style>

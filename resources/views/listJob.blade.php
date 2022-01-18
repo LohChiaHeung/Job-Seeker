@@ -27,12 +27,22 @@
 </div>
 @endsection 
 
-
-
 <style>
-.card {
+.card.p-2 {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
+  background-color:skyblue;
+}
+
+.card.p-2:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+  background-color:00ffff;
+}
+
+.card-title {
+    font-family:sans-serif;
+    font-size:25px;
 }
 </style>
    
