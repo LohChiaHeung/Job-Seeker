@@ -5,7 +5,7 @@
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
             <br><br>
-            <h3>Create New job</h3>
+            <h3 class="heading1">Create New job</h3>
             <form action="{{ route('storeJob') }}" method="POST" enctype="multipart/form-data" >
             @csrf
                 <div class="form-group">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="skill">Skill Required</label>
-                    <input type="text" class="form-control" id="skill" name="skill">                
+                    <textarea class="form-control" id="skill" name="skill" rows="3"></textarea>             
                 </div>
                 <div class="form-group">
                     <label for="jobSalary">Job Salary</label>
@@ -60,3 +60,8 @@
     </div>
 </div>
 @endsection
+<style>
+.heading1 {
+    font-size:38px;
+}
+</style>

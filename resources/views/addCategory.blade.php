@@ -5,7 +5,7 @@
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
             <br><br>
-            <h3>Create New Category</h3>
+            <h3 class="heading1">Create New Category</h3>
             <form method="post" actions="{{route('storeCategory')}}">
             @csrf
                 <div class="form-group">
@@ -20,3 +20,8 @@
     </div>
 </div>
 @endsection
+<style>
+.heading1 {
+    font-size:38px;
+}
+</style>
