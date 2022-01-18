@@ -10,7 +10,7 @@
                 <div class="col-sm-4 mb-2">
                     <div class="card p-2" style="width:19rem;height:30rem">
                         <h5 class="card-title" style="text-align:center; margin-top:7px">{{$job->name}}</h5>
-                        <img class="card-img-top img-fluid img-thumbnail" src="{{ asset('images/') }}/{{$job->image}}" alt="job" style="max-height:50%" >
+                        <img class="card-img-top img-fluid img-thumbnail" src="{{ asset('images/') }}/{{$job->image}}" alt="job" style="height:50%" >
                         <div class="card-body" style="text-align:center;">
                             Salary: RM {{$job->salary}} <br>
                             Gender: {{$job->gender}}<br>

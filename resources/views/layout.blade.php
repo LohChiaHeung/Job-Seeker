@@ -17,7 +17,7 @@
           {{Session::get('success')}}
         </div>
         @endif
-        <!--=========最上面的navigation bar===============-->
+        <!--=========navigation bar===============-->
         <nav class="navbar navbar-expand-lg navbar-dark px-5" style="background-color:#235789;">
         <img src="{{asset('images/logo.JPG')}}" class="rounded-circle" alt="Job Seeker" width="30">&nbsp;
         <a class="navbar-brand" href="{{route('welcome')}}">Job Seeker</a>
@@ -61,7 +61,7 @@
             </button>
             </div>
         </nav>
-        <!--=========end of最上面的navigation bar===============-->
+        <!--=========end of navigation bar===============-->
 
         @yield('content')
         <!--==========footer===============-->

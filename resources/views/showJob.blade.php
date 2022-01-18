@@ -22,7 +22,7 @@
                         @foreach($jobs as $job)
                         <tr>
                             <td>{{$job->id}}</td>
-                            <td><img src="{{ asset('images/') }}/{{$job->image}}" width="100" class="img-fluid" alt=""></td>
+                            <td><img src="{{ asset('images/') }}/{{$job->image}}" width="150" height="110" class="img-fluids" alt=""></td>
                             <td width="100">{{$job->name}}</td>
                             <td>
                                 Gender: {{$job->gender}}<br>
@@ -47,3 +47,10 @@
     </div>
 </div>
 @endsection
+
+<style>
+.img-fluids {
+    width:100px;
+    height:100px;
+}
+</style>
