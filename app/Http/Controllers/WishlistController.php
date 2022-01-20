@@ -11,8 +11,8 @@ use Auth;
 
 class WishlistController extends Controller
 {
-    //
-    public function __contruct(){
+
+    public function __construct(){
         $this->middleware('auth');
     }
 
@@ -33,7 +33,24 @@ class WishlistController extends Controller
         ->where('wishlists.userID','=',Auth::id()) //item match with current login user
         ->get();
 
+        $this->wishListItems(); //call function to calculate no.cart item
+
         return view('wishlist')->with('wishlists',$wishlists);
+    }
+
+    public function wishListItems(){
+        $wishListItems=0;
+        $noItem=DB::table('wishlists')
+        ->leftjoin('jobs','jobs.id','=','wishlists.jobID')
+        ->select(DB::raw('COUNT(*) as count_item'))
+        ->where('wishlists.userID','=',Auth::id()) 
+        ->groupBy('wishlists.userID')
+        ->first();
+        if($noItem){
+            $wishListItems=$noItem->count_item;
+        }
+        Session()->put('wishListItems',$wishListItems);
+        
     }
 
     public function delete($id){

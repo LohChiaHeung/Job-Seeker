@@ -43,6 +43,7 @@ class JobController extends Controller
         ->get();
         return view('showJob')
         ->with('jobs',$viewJob);
+        
     }
 
     public function delete($id){
@@ -86,12 +87,14 @@ class JobController extends Controller
     public function listJob(){
         $jobs=Job::all();
         return view('listJob')->with('jobs',$jobs);
+        (new WishlistController)->wishListItems(); 
     }
 
     
     public function jobdetail($id){
         $jobs=job::all()->where('id',$id);
         return view("jobDetail")->with('jobs',$jobs);
+        (new WishlistController)->wishListItems(); 
     }
 
     public function viewIT(){

@@ -56,9 +56,15 @@
                 <input class="form-control mr-sm-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
                 <button class="btn btn-primary my-2 my-sm-0 mx-1" type="submit"><i class="fa fa-search"></i></button>
             </form>
+            @guest
             <button type="button" class="btn btn-primary" onClick="window.location.href='{{route('show.wishlist')}}'">
-                My Wishlist <span class="badge bg-danger">1</span>
+                My Wishlist 
             </button>
+            @else
+            <button type="button" class="btn btn-primary" onClick="window.location.href='{{route('show.wishlist')}}'">
+                My Wishlist <span class="badge bg-danger">{{Session()->get('wishListItems')}}</span>
+            </button>
+            @endguest
             </div>
         </nav>
         <!--=========end of navigation bar===============-->
