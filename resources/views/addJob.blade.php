@@ -13,6 +13,10 @@
                     <input type="text" class="form-control" id="jobName" name="jobName">                
                 </div>
                 <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" class="form-control" id="companyName" name="companyName">                
+                </div>
+                <div class="form-group">
                     <label for="gender">Gender Required</label>
                     <input type="text" class="form-control" id="gender" name="gender">                
                 </div>

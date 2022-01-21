@@ -12,6 +12,7 @@
                         <h5 class="card-title" style="text-align:center; margin-top:7px">{{$job->name}}</h5>
                         <img class="card-img-top img-fluid img-thumbnail" src="{{ asset('images/') }}/{{$job->image}}" alt="job" style="height:50%" >
                         <div class="card-body" style="text-align:center;">
+                            Company Name: {{$job->company}} <br>
                             Salary: RM {{$job->salary}} <br>
                             Gender: {{$job->gender}}<br>
                             Position: {{$job->position}}

@@ -21,6 +21,7 @@ class JobController extends Controller
         $imageName=$image->getClientOriginalName(); 
         $addJob=Job::create([
             'name'=>$r->jobName,
+            'company'=>$r->companyName,
             'gender'=>$r->gender,
             'position'=>$r->position,
             'FullPart'=>$r->FP,
@@ -72,6 +73,7 @@ class JobController extends Controller
             } 
 
             $jobs->name=$r->JobName;
+            $jobs->company=$r->companyName;
             $jobs->gender=$r->gender;
             $jobs->position=$r->position;
             $jobs->FullPart=$r->FP;

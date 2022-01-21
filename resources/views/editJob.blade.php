@@ -15,6 +15,10 @@
                 <input type="hidden" name="jobID" id="jobID" value="{{$job->id}}">               
             </div>
             <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" class="form-control" id="companyName" name="companyName" value="{{$job->company}}">                
+                </div>
+            <div class="form-group">
                 <label for="gender">Gender Required</label>
                 <input type="text" class="form-control" id="gender" name="gender" value="{{$job->gender}}">                
             </div>

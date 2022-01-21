@@ -15,6 +15,7 @@
                     </div>
                     <div class="col-md-8" style="align-items:center">
                         <div class="card-body">
+                            Comapny Name:{{$job->company}} <br>
                             Salary: RM {{$job->salary}} <br>
                             Gender: {{$job->gender}}<br>
                             Position: {{$job->position}}<br>

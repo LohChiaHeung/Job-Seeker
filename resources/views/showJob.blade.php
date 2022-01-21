@@ -25,6 +25,7 @@
                             <td><img src="{{ asset('images/') }}/{{$job->image}}" width="150" height="110" class="img-fluids" alt=""></td>
                             <td width="100">{{$job->name}}</td>
                             <td>
+                                Company Name: {{$job->company}}<br>
                                 Gender: {{$job->gender}}<br>
                                 Position: {{$job->position}}<br>
                                 {{$job->FullPart}}<br>

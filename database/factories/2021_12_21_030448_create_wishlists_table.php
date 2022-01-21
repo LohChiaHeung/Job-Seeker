@@ -31,3 +31,4 @@ class CreateWishlistsTable extends Migration
         Schema::dropIfExists('wishlists');
     }
 }
+
