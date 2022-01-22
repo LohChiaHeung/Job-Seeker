@@ -64,4 +64,14 @@ name('jobs.accountant');
 Route::get('/Artist',[App\Http\Controllers\JobController::class,'viewArtist'])->
 name('jobs.artist');
 
+Route::get('/FullTime',[App\Http\Controllers\JobController::class,'viewFull'])->
+name('jobs.full');
+
+Route::get('/PartTime',[App\Http\Controllers\JobController::class,'viewPart'])->
+name('jobs.part');
+
 Route::post('/searchCareers',[App\Http\Controllers\JobController::class,'searchCareer'])->name('search.careers');
+
+Route::get('/noResult', function () {
+    return view('noResult');
+});

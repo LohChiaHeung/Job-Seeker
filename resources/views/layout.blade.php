@@ -48,6 +48,9 @@
                         <a class="dropdown-item" href="{{route('jobs.IT')}}">IT</a>
                         <a class="dropdown-item" href="{{route('jobs.accountant')}}">Accountant</a> 
                         <a class="dropdown-item" href="{{route('jobs.artist')}}">Artist</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{route('jobs.full')}}">Full Time</a>
+                        <a class="dropdown-item" href="{{route('jobs.part')}}">Part Time</a>
                     </div>
                     </li>
                 </ul>
