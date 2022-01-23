@@ -88,9 +88,9 @@ class JobController extends Controller
     }
 
     public function listJob(){
+        (new WishlistController)->wishListItems(); 
         $jobs=Job::all();
         return view('listJob')->with('jobs',$jobs);
-        (new WishlistController)->wishListItems(); 
     }
 
     
@@ -101,25 +101,50 @@ class JobController extends Controller
     }
 
     public function viewIT(){
-        $jobs=DB::table('jobs')->where('CategoryID','=','1')->get();
-        return view('listJob')->with('jobs',$jobs);
+        $jobs=DB::table('jobs')
+        ->leftjoin('categories','categories.id','=','jobs.CategoryID')
+        ->where('categories.name','=','IT')
+        ->get();
+        if(!$jobs->first()){  return view('noResult');  } //no result
+            else{  return view('listJob')->with('jobs',$jobs);  }
     }
 
     public function viewAccountant(){
-        $jobs=DB::table('jobs')->where('CategoryID','=','2')->get();
-        return view('listJob')->with('jobs',$jobs);
+        $jobs=DB::table('jobs')
+        ->leftjoin('categories','categories.id','=','jobs.CategoryID')
+        ->where('categories.name','=','Accountant')
+        ->get();
+        if(!$jobs->first()){  return view('noResult');  } //no result
+            else{  return view('listJob')->with('jobs',$jobs);  }
     }
 
     public function viewArtist(){
-        $jobs=DB::table('jobs')->where('CategoryID','=','3')->get();
+        $jobs=DB::table('jobs')
+        ->leftjoin('categories','categories.id','=','jobs.CategoryID')
+        ->where('categories.name','=','Artist')
+        ->get();
+        if(!$jobs->first()){  return view('noResult');  } //no result
+            else{  return view('listJob')->with('jobs',$jobs);  }
+    }
+
+    public function viewFull(){
+        $jobs=DB::table('jobs')->where('FullPart','=','Full Time')->get();
+        return view('listJob')->with('jobs',$jobs);
+    }
+
+    public function viewPart(){
+        $jobs=DB::table('jobs')->where('FullPart','=','Part Time')->get();
         return view('listJob')->with('jobs',$jobs);
     }
 
     public function searchCareer(){
         $r=request();
         $keyword=$r->keyword;
-        $jobs=DB::table('jobs')->where('name','like','%'.$keyword.'%')->get();
-        return view('listJob')->with('jobs',$jobs);
+        $jobs=DB::table('jobs')
+        ->where('name','like','%'.$keyword.'%')
+        ->orWhere(DB::raw('lower(FullPart)'), strtolower("$keyword")) //ignore case
+        ->get();
+        if(!$jobs->first()){  return view('noResult');  } //no result
+            else{  return view('listJob')->with('jobs',$jobs);  }
     }
-
 }

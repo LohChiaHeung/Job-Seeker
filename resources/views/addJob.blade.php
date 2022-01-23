@@ -26,7 +26,11 @@
                 </div>
                 <div class="form-group">
                     <label for="FP">Full Time/Part Time</label>
-                    <input type="text" class="form-control" id="FP" name="FP">                
+                    <select name="FP" id="FP" class="form-control">
+                        <option value="Full Time">Full Time</option>
+                        <option value="Part Time">Part Time</option>
+                    </select>
+                    <!-- <input type="text" class="form-control" id="FP" name="FP">                 -->
                 </div>
                 <div class="form-group">
                     <label for="skill">Skill Required</label>

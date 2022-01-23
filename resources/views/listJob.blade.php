@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="container fluid mx-10">
-    <div class="row mb-3">
+    <div class="row mb-3" style="min-height:480px">
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <h3 class="mt-3">Jobs Available</h3>

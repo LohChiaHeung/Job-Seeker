@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid" style="max-width=100%;">
         <div class="row">
             <div class="col-sm-12">
                 <img src="{{ asset('images/job_search.png')}}" alt="bgimages" class="img-fluid" width=100%  > 
@@ -39,5 +39,10 @@
     font-size:40px;
     font-weight: bold;
     text-align:center;
+}
+
+.container-fluid{
+    margin:0!important;
+    padding:0!important;
 }
 </style>
