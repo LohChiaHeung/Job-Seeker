@@ -38,6 +38,7 @@
                             <!-- 2 -->
                             <td><a href="{{ route('editJob',['id'=>$job->id]) }}" class="btn btn-warning btn-sm" style="margin-bottom:5px;">Edit</a> <br> 
                             <a href="{{ route('deleteJob',['id'=>$job->id]) }}" class="btn btn-danger btn-sm" onClick="return confirm('Are you sure to delete?')">Delete</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

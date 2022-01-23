@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-md-4" style="align-items:center">
                             <input type="hidden" name="jobID" value="{{$job->id}}">
-                            <img src="{{ asset('images/')}}/{{$job->image}}" alt="" width="100%" class="img-fluid">
+                            <img src="{{ asset('images/')}}/{{$job->image}}" alt="" width="100%" class="img-fluids">
                         </div>
                         <div class="col-md-8" style="align-items:center">
                             <div class="card-body">
@@ -36,3 +36,10 @@
     </div>
 </div>
 @endsection
+
+<style>
+    .img-fluids {
+    width:230px;
+    height:230px;
+}
+</style>

@@ -19,7 +19,7 @@ class JobController extends Controller
         $r=request();  //received the data by GET or POST mothod 
         $image=$r->file('companyImage');        
         $image->move('images',$image->getClientOriginalName());   //images is the location                
-        $imageName=$image->getClientOriginalName(); 
+        $imageName=$image->getClientOriginalName();
         $addJob=Job::create([
             'name'=>$r->jobName,
             'company'=>$r->companyName,
@@ -33,7 +33,7 @@ class JobController extends Controller
             'image'=>$imageName,
             'Tel'=>$r->Tel,
         ]);
-        Session::flash('success',"Job create successfully!");
+        Session::flash('success',"Job is created successfully!");
         Return redirect()->route('viewJob');
     }
 
@@ -52,7 +52,7 @@ class JobController extends Controller
         
         $deleteJob=Job::find($id);
         $deleteJob->delete();
-        Session::flash('success',"Job was delete successfully!");
+        Session::flash('success',"Job was deleted successfully!");
         Return redirect()->route('viewJob');
     }
 
@@ -102,40 +102,39 @@ class JobController extends Controller
     }
 
     public function viewIT(){
-        $jobs=DB::table('jobs')
-        ->leftjoin('categories','categories.id','=','jobs.CategoryID')
-        ->where('categories.name','=','IT')
-        ->get();
+        $jobs=DB::table('jobs')->where('CategoryID','=','1')->get();
         if(!$jobs->first()){  return view('noResult');  } //no result
             else{  return view('listJob')->with('jobs',$jobs);  }
+        return view('listJob')->with('jobs',$jobs);
     }
 
     public function viewAccountant(){
-        $jobs=DB::table('jobs')
-        ->leftjoin('categories','categories.id','=','jobs.CategoryID')
-        ->where('categories.name','=','Accountant')
-        ->get();
+        $jobs=DB::table('jobs')->where('CategoryID','=','2')->get();
         if(!$jobs->first()){  return view('noResult');  } //no result
             else{  return view('listJob')->with('jobs',$jobs);  }
+        return view('listJob')->with('jobs',$jobs);
     }
 
     public function viewArtist(){
-        $jobs=DB::table('jobs')
-        ->leftjoin('categories','categories.id','=','jobs.CategoryID')
-        ->where('categories.name','=','Artist')
-        ->get();
+        $jobs=DB::table('jobs')->where('CategoryID','=','3')->get();
         if(!$jobs->first()){  return view('noResult');  } //no result
             else{  return view('listJob')->with('jobs',$jobs);  }
+        return view('listJob')->with('jobs',$jobs);
     }
 
     public function viewFull(){
         $jobs=DB::table('jobs')->where('FullPart','=','Full Time')->get();
+        if(!$jobs->first()){  return view('noResult');  } //no result
+        else{  return view('listJob')->with('jobs',$jobs);  }
         return view('listJob')->with('jobs',$jobs);
     }
 
     public function viewPart(){
         $jobs=DB::table('jobs')->where('FullPart','=','Part Time')->get();
+        if(!$jobs->first()){  return view('noResult');  } //no result
+        else{  return view('listJob')->with('jobs',$jobs);  }
         return view('listJob')->with('jobs',$jobs);
+
     }
 
     public function searchCareer(){

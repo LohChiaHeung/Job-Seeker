@@ -36,9 +36,12 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="{{route('storeCategory')}}">Add Category</a>
                             <a class="dropdown-item" href="{{route('storeJob')}}">Add Job</a>
+                            <a class="dropdown-item" href="{{route('storeCompany')}}">Add Company</a>
                             <a class="dropdown-item" href="{{route('jobs')}}">List Job</a>
+                            <a class="dropdown-item" href="{{route('companies')}}">List Companies</a>
                             <a class="dropdown-item" href="{{route('viewCategory')}}">Show Category</a>
                             <a class="dropdown-item" href="{{route('viewJob')}}">Show Job</a>
+                            <a class="dropdown-item" href="{{route('viewCompany')}}">Show Company</a>
                     </div>
                     </li>
                     <li class="nav-item dropdown">

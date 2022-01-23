@@ -22,30 +22,47 @@ Route::get('/addCategory', function () {
     return view('addCategory');
 });
 
+Route::get('/addCompany', function () {
+    return view('addCompany');
+});
+
 Route::get('/addJob', function () {
     return view('addJob',['categoryID'=>App\Models\Category::all()]);
 });
 
+
 Route::post('/addCategory', [App\Http\Controllers\CategoryController::class, 'store'])->name('storeCategory');
+Route::post('/addCompany', [App\Http\Controllers\CompanyController::class, 'store'])->name('storeCompany');
 Route::post('/addJob', [App\Http\Controllers\JobController::class, 'store'])->name('storeJob');
 Route::post('/updateJob', [App\Http\Controllers\JobController::class, 'update'])->name('updateJob');
+Route::post('/updateCompany', [App\Http\Controllers\CompanyController::class, 'update'])->name('updateCompany');
 Route::post('/addWishlist', [App\Http\Controllers\WishlistController::class, 'add'])->name('add.to.wishlist');
 
 Route::get('/showCategory', [App\Http\Controllers\CategoryController::class, 'view'])->name('viewCategory');
 
 Route::get('/showJob', [App\Http\Controllers\JobController::class, 'view'])->name('viewJob');
+
+Route::get('/showCompany', [App\Http\Controllers\CompanyController::class, 'view'])->name('viewCompany');
 //1
 Route::get('/deleteJob/{id}',[App\Http\Controllers\JobController::class,'delete'])->name('deleteJob');
 
 Route::get('/deleteCategory/{id}',[App\Http\Controllers\CategoryController::class,'delete'])->name('deleteCategory');
 
+Route::get('/deleteCompany/{id}',[App\Http\Controllers\CompanyController::class,'delete'])->name('deleteCompany');
+
 Route::get('editJob/{id}',[App\Http\Controllers\JobController::class,'edit'])->name('editJob');
+
+Route::get('editCompany/{id}',[App\Http\Controllers\CompanyController::class,'edit'])->name('editCompany');
 
 Route::get('/jobDetail/{id}',[App\Http\Controllers\JobController::class,'jobdetail'])->name('Job.detail');
 
 Route::get('/listJobs', [App\Http\Controllers\JobController::class, 'listJob'])->name('jobs');
 
+Route::get('/listCompanies', [App\Http\Controllers\CompanyController::class, 'listCompany'])->name('companies');
+
 Route::get('/jobDetail/{id}',[App\Http\Controllers\JobController::class,'jobdetail'])->name('job.detail');
+
+Route::get('/CompaniesDetail/{id}',[App\Http\Controllers\CompanyController::class,'companiesDetails'])->name('companies.detail');
 
 Route::get('/deleteWishlist/{id}',[App\Http\Controllers\WishlistController::class,'delete'])->name('delete.wishlist');
 

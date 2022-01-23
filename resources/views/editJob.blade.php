@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                     <label for="companyName">Company Name</label>
-                    <input type="text" class="form-control" id="companyName" name="companyName" value="{{$job->company}}">                
+                    <input type="text" class="form-control" id="name" name="name" value="{{$job->company}}">                
                 </div>
             <div class="form-group">
                 <label for="gender">Gender Required</label>
