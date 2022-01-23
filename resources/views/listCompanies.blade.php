@@ -12,10 +12,10 @@
                         <h5 class="card-title" style="text-align:center; margin-top:7px">{{$company->companyName}}</h5>
                         <img class="card-img-top img-fluid img-thumbnail" src="{{ asset('images/') }}/{{$company->companyLogo}}" alt="job" style="height:50%" >
                         <div class="card-body" style="text-align:center;">
-                        Location:{{$company->companyLocation}} <br>
-                        Size:    {{$company->companySize}}<br>
-                        PhoneNum:{{$company->companyTelephone}} <br>
-                        Email:{{$company->companyEmail}}
+                            Location:{{$company->companyLocation}} <br>
+                            Size:    {{$company->companySize}}<br>
+                            PhoneNum:{{$company->companyTelephone}} <br>
+                            Email:{{$company->companyEmail}}
                         </div> 
                         <a href="{{ route('companies.detail', $company->id) }}" class="btn btn-primary" style="margin:auto;">View</a>
                     </div>

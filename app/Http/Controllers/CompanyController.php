@@ -51,22 +51,22 @@ class CompanyController extends Controller
 
     public function update(){
         $r=request();
-        $companies=Company::find($r->CompanyID);
+        $company=Company::find($r->companyID);
         
         if($r->file('companyLogo')!=''){
             $image=$r->file('companyLogo');        
             $image->move('images',$image->getClientOriginalName());                   
             $imageName=$image->getClientOriginalName(); 
-            $companies->image=$imageName;
+            $company->image=$imageName;
             } 
 
-            $companies->companyname=$r->name;
-            $companies->companySize=$r->companySize;
-            $companies->companyLocation=$r->companyLocation;
-            $companies->companyTelephone=$r->companyTelephone;
-            $companies->companyEmail=$r->companyEmail;
-            $companies->companyAdditionalInfo=$r->companyAdditionalInfo;
-            $companies->save();
+            $company->companyName=$r->companyName;
+            $company->companySize=$r->companySize;
+            $company->companyLocation=$r->companyLocation;
+            $company->companyTelephone=$r->companyTelephone;
+            $company->companyEmail=$r->companyEmail;
+            $company->companyAdditionalInfo=$r->companyAdditionalInfo;
+            $company->save();
 
         return redirect()->route('viewCompany');
     }

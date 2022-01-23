@@ -62,7 +62,7 @@ Route::get('/listCompanies', [App\Http\Controllers\CompanyController::class, 'li
 
 Route::get('/jobDetail/{id}',[App\Http\Controllers\JobController::class,'jobdetail'])->name('job.detail');
 
-Route::get('/CompaniesDetail/{id}',[App\Http\Controllers\CompanyController::class,'companiesDetails'])->name('companies.detail');
+Route::get('/companiesDetail/{id}',[App\Http\Controllers\CompanyController::class,'companiesDetails'])->name('companies.detail');
 
 Route::get('/deleteWishlist/{id}',[App\Http\Controllers\WishlistController::class,'delete'])->name('delete.wishlist');
 

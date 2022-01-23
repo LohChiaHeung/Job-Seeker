@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="container">
-    <div class="row">
+    <div class="row" style="min-height:480px">
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
             <br><br>
