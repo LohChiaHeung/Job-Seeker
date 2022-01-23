@@ -57,7 +57,7 @@ class WishlistController extends Controller
         
         $deleteWishlist=Wishlist::find($id); //binding record
         $deleteWishlist->delete(); //delete record
-        Session::flash('success',"Wishlist was remove successfully!");
+        Session::flash('success',"Wishlist was removed successfully!");
         Return redirect()->route('show.wishlist');
     }
 }
