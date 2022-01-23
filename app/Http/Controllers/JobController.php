@@ -73,7 +73,7 @@ class JobController extends Controller
             $jobs->image=$imageName;
             } 
 
-            $jobs->name=$r->JobName;
+            $jobs->name=$r->jobName;
             $jobs->company=$r->companyName;
             $jobs->gender=$r->gender;
             $jobs->position=$r->position;
@@ -81,6 +81,7 @@ class JobController extends Controller
             $jobs->skill=$r->skill;
             $jobs->salary=$r->jobSalary;
             $jobs->numberOfHiring=$r->numberOfHiring;
+            $jobs->tel=$r->Tel;
             $jobs->CategoryID=$r->CategoryID;
             $jobs->save();
 
