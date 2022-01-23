@@ -29,7 +29,8 @@ class WishlistController extends Controller
     public function showWishlist(){
         $wishlists=DB::table('wishlists')
         ->leftjoin('jobs','jobs.id','=','wishlists.jobID')
-        ->select('wishlists.id as cid','jobs.*')
+        ->leftjoin('companies','companies.id','=','jobs.CompanyID')
+        ->select('jobs.*','wishlists.id as cid','companies.companyLogo as image','companies.companyTelephone as Tel')
         ->where('wishlists.userID','=',Auth::id()) //item match with current login user
         ->get();
 

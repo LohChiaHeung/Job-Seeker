@@ -20,6 +20,7 @@
                     Company Email          :{{$company->companyEmail}} <br>
                     Additional Information :{{$company->companyAdditionalInfo}}
                     </div>
+                    <a href="{{ route('companies.job', $company->id) }}" class="btn btn-primary" style="margin:auto;float: right;">Job For this Company</a>
                 </div>                                             
             </div>
             </div>

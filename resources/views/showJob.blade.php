@@ -8,7 +8,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <td>ID</td>
+                            <td>Job ID</td>
                             <td>Company Image</td>
                             <td>Job Name</td>
                             <td>Job Description</td>
@@ -25,7 +25,7 @@
                             <td><img src="{{ asset('images/') }}/{{$job->image}}" width="150" height="110" class="img-fluids" alt=""></td>
                             <td width="100">{{$job->name}}</td>
                             <td>
-                                Company Name: {{$job->company}}<br>
+                                Company Name: {{$job->compName}}<br>
                                 Gender: {{$job->gender}}<br>
                                 Position: {{$job->position}}<br>
                                 {{$job->FullPart}}<br>

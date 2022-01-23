@@ -14,11 +14,19 @@
                 </div>
                 <div class="form-group">
                     <label for="companyName">Company Name</label>
-                    <input type="text" class="form-control" id="companyName" name="companyName">                
+                    <select name="CompanyID" id="CompanyID" class="form-control">
+                        @foreach($companyID as $company)
+                            <option value="{{$company->id}}">{{$company->companyName}}</option>
+                        @endforeach
+                    </select>             
                 </div>
                 <div class="form-group">
                     <label for="gender">Gender Required</label>
-                    <input type="text" class="form-control" id="gender" name="gender">                
+                    <select name="gender" id="gender" class="form-control">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Any">Any</option>
+                    </select>           
                 </div>
                 <div class="form-group">
                     <label for="position">Position</label>
@@ -38,19 +46,11 @@
                 </div>
                 <div class="form-group">
                     <label for="jobSalary">Job Salary</label>
-                    <input type="number" class="form-control" id="jobSalary" name="jobSalary" min="1000">                
+                    <input type="number" class="form-control" id="jobSalary" name="jobSalary" min="1000" placeholder="Min 1000">                
                 </div>
                 <div class="form-group">
                     <label for="numberOfHiring">Number of Hiring</label>
                     <input type="number" class="form-control" id="numberOfHiring" name="numberOfHiring" min="1">                
-                </div>
-                <div class="form-group">
-                    <label for="Tel">Contact Number</label>
-                    <input type="text" class="form-control" id="Tel" name="Tel">                
-                </div>
-                <div class="form-group">
-                    <label for="companyImage">Company Image(Logo)</label>
-                    <input type="file" class="form-control" id="companyImage" name="companyImage">                
                 </div>
                 <div class="form-group">
                     <label for="catID">Category</label>

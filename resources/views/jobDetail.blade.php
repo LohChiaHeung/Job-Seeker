@@ -19,7 +19,6 @@
                                 Comapny Name:{{$job->company}} <br>
                                 Salary: RM {{$job->salary}} <br>
                                 Gender: {{$job->gender}}<br>
-                                Position: {{$job->position}}<br>
                                 {{$job->FullPart}}<br>
                                 Skill Required: {{$job->skill}}<br>
                                 Contact Number:{{$job->Tel}}

@@ -27,9 +27,8 @@ Route::get('/addCompany', function () {
 });
 
 Route::get('/addJob', function () {
-    return view('addJob',['categoryID'=>App\Models\Category::all()]);
+    return view('addJob',['categoryID'=>App\Models\Category::all()], ['companyID'=>App\Models\Company::all()]);
 });
-
 
 Route::post('/addCategory', [App\Http\Controllers\CategoryController::class, 'store'])->name('storeCategory');
 Route::post('/addCompany', [App\Http\Controllers\CompanyController::class, 'store'])->name('storeCompany');
@@ -86,6 +85,9 @@ name('jobs.full');
 
 Route::get('/PartTime',[App\Http\Controllers\JobController::class,'viewPart'])->
 name('jobs.part');
+
+Route::get('/companyJob/{id}',[App\Http\Controllers\CompanyController::class,'companyJob'])->
+name('companies.job');
 
 Route::post('/searchCareers',[App\Http\Controllers\JobController::class,'searchCareer'])->name('search.careers');
 

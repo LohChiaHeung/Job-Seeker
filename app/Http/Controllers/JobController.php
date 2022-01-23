@@ -7,6 +7,7 @@ use DB;
 use Session;
 use App\Models\Job;
 use App\Models\Category;
+use App\Models\Company;
 use Auth;
 
 class JobController extends Controller
@@ -17,12 +18,9 @@ class JobController extends Controller
 
     public function store(){
         $r=request();  //received the data by GET or POST mothod 
-        $image=$r->file('companyImage');        
-        $image->move('images',$image->getClientOriginalName());   //images is the location                
-        $imageName=$image->getClientOriginalName();
         $addJob=Job::create([
             'name'=>$r->jobName,
-            'company'=>$r->companyName,
+            'CompanyID'=>$r->CompanyID,
             'gender'=>$r->gender,
             'position'=>$r->position,
             'FullPart'=>$r->FP,
@@ -30,8 +28,6 @@ class JobController extends Controller
             'numberOfHiring'=>$r->numberOfHiring,
             'salary'=>$r->jobSalary,
             'CategoryID'=>$r->CategoryID,
-            'image'=>$imageName,
-            'Tel'=>$r->Tel,
         ]);
         Session::flash('success',"Job is created successfully!");
         Return redirect()->route('viewJob');
@@ -41,11 +37,11 @@ class JobController extends Controller
     public function view(){
         $viewJob = DB::table("jobs")
         ->leftjoin('categories','categories.id','=','jobs.CategoryID')
-        ->select('jobs.*','categories.name as cName')
+        ->leftjoin('companies','companies.id','=','jobs.CompanyID')
+        ->select('jobs.*','categories.name as cName','companies.companyName as compName','companies.companyLogo as image','companies.companyTelephone as Tel')
         ->get();
         return view('showJob')
         ->with('jobs',$viewJob);
-        
     }
 
     public function delete($id){
@@ -81,7 +77,6 @@ class JobController extends Controller
             $jobs->skill=$r->skill;
             $jobs->salary=$r->jobSalary;
             $jobs->numberOfHiring=$r->numberOfHiring;
-            $jobs->tel=$r->Tel;
             $jobs->CategoryID=$r->CategoryID;
             $jobs->save();
 
@@ -90,47 +85,77 @@ class JobController extends Controller
 
     public function listJob(){
         (new WishlistController)->wishListItems(); 
-        $jobs=Job::all();
+        $jobs= DB::table("jobs")
+        ->leftjoin('companies','companies.id','=','jobs.CompanyID')
+        ->select('jobs.*','companies.companyName as company','companies.companyLogo as image')
+        ->get();
         return view('listJob')->with('jobs',$jobs);
     }
 
     
     public function jobdetail($id){
-        $jobs=job::all()->where('id',$id);
-        return view("jobDetail")->with('jobs',$jobs);
         (new WishlistController)->wishListItems(); 
+        $jobs= DB::table("jobs")
+        ->leftjoin('companies','companies.id','=','jobs.CompanyID')
+        ->select('jobs.*','companies.companyName as company','companies.companyLogo as image','companies.companyTelephone as Tel')
+        ->where('jobs.id',$id)
+        ->get();
+        return view("jobDetail")->with('jobs',$jobs);
     }
 
     public function viewIT(){
-        $jobs=DB::table('jobs')->where('CategoryID','=','1')->get();
+        $jobs=DB::table('jobs')
+        ->leftjoin('categories','categories.id','=','jobs.CategoryID')
+        ->leftjoin('companies','companies.id','=','jobs.CompanyID')
+        ->select('jobs.*','companies.companyName as company','companies.companyLogo as image','companies.companyTelephone as Tel','categories.name as cname')
+        ->where('categories.name','=','IT')
+        ->get();
         if(!$jobs->first()){  return view('noResult');  } //no result
             else{  return view('listJob')->with('jobs',$jobs);  }
         return view('listJob')->with('jobs',$jobs);
     }
 
     public function viewAccountant(){
-        $jobs=DB::table('jobs')->where('CategoryID','=','2')->get();
+        $jobs=DB::table('jobs')
+        ->leftjoin('categories','categories.id','=','jobs.CategoryID')
+        ->leftjoin('companies','companies.id','=','jobs.CompanyID')
+        ->select('jobs.*','companies.companyName as company','companies.companyLogo as image','companies.companyTelephone as Tel','categories.name as cname')
+        ->where('categories.name','=','Accountant')
+        ->get();
         if(!$jobs->first()){  return view('noResult');  } //no result
             else{  return view('listJob')->with('jobs',$jobs);  }
         return view('listJob')->with('jobs',$jobs);
     }
 
     public function viewArtist(){
-        $jobs=DB::table('jobs')->where('CategoryID','=','3')->get();
+        $jobs=DB::table('jobs')
+        ->leftjoin('categories','categories.id','=','jobs.CategoryID')
+        ->leftjoin('companies','companies.id','=','jobs.CompanyID')
+        ->select('jobs.*','companies.companyName as company','companies.companyLogo as image','companies.companyTelephone as Tel','categories.name as cname')
+        ->where('categories.name','=','Artist')
+        ->get();
         if(!$jobs->first()){  return view('noResult');  } //no result
             else{  return view('listJob')->with('jobs',$jobs);  }
         return view('listJob')->with('jobs',$jobs);
     }
 
     public function viewFull(){
-        $jobs=DB::table('jobs')->where('FullPart','=','Full Time')->get();
+        $jobs=DB::table('jobs')
+        ->leftjoin('companies','companies.id','=','jobs.CompanyID')
+        ->select('jobs.*','companies.companyName as company','companies.companyLogo as image','companies.companyTelephone as Tel')
+        ->where('FullPart','=','Full Time')
+        ->get();
         if(!$jobs->first()){  return view('noResult');  } //no result
         else{  return view('listJob')->with('jobs',$jobs);  }
         return view('listJob')->with('jobs',$jobs);
     }
 
     public function viewPart(){
-        $jobs=DB::table('jobs')->where('FullPart','=','Part Time')->get();
+        $jobs=DB::table('jobs')
+        ->leftjoin('companies','companies.id','=','jobs.CompanyID')
+        ->select('jobs.*','companies.companyName as company','companies.companyLogo as image','companies.companyTelephone as Tel')
+        ->where('FullPart','=','Part Time')
+        ->get();
         if(!$jobs->first()){  return view('noResult');  } //no result
         else{  return view('listJob')->with('jobs',$jobs);  }
         return view('listJob')->with('jobs',$jobs);
@@ -141,10 +166,14 @@ class JobController extends Controller
         $r=request();
         $keyword=$r->keyword;
         $jobs=DB::table('jobs')
+        ->leftjoin('companies','companies.id','=','jobs.CompanyID')
+        ->select('jobs.*','companies.companyName as company','companies.companyLogo as image','companies.companyTelephone as Tel')
         ->where('name','like','%'.$keyword.'%')
         ->orWhere(DB::raw('lower(FullPart)'), strtolower("$keyword")) //ignore case
         ->get();
         if(!$jobs->first()){  return view('noResult');  } //no result
             else{  return view('listJob')->with('jobs',$jobs);  }
     }
+
+    
 }

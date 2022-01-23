@@ -82,6 +82,15 @@ class CompanyController extends Controller
         return view("CompaniesDetail")->with('companies',$companies);
     }
 
+    public function companyJob($id){
+        $jobs= DB::table("jobs")
+        ->leftjoin('companies','companies.id','=','jobs.CompanyID')
+        ->select('jobs.*','companies.companyName as company','companies.companyLogo as image')
+        ->where('companies.id','=',$id)
+        ->get();
+        if(!$jobs->first()){  return view('noResult');  } //no result
+        else{  return view('listJob')->with('jobs',$jobs);  }
 
+    }
 
 }

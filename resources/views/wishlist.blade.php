@@ -19,11 +19,10 @@
                         @foreach($wishlists as $wishlist)
                         <tr>
                             
-                            <td><input type="hidden" name="id" id="id" value="{{$wishlist->cid}}"><img src="{{ asset('images/') }}/{{$wishlist->image}}" width="100" class="img-fluid" alt=""></td>
-                            <td width="200">{{$wishlist->name}}</td>
+                            <td width="150"><input type="hidden" name="id" id="id" value="{{$wishlist->cid}}"><img src="{{ asset('images/') }}/{{$wishlist->image}}" width="150" class="img-fluid" alt=""></td>
+                            <td>{{$wishlist->name}}</td>
                             <td>
                                 Gender: {{$wishlist->gender}}<br>
-                                Position: {{$wishlist->position}}<br>
                                 {{$wishlist->FullPart}}<br>
                                 Skill Required: {{$wishlist->skill}}<br>
                                 Contact Number:{{$wishlist->Tel}}
