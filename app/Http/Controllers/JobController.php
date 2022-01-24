@@ -22,7 +22,6 @@ class JobController extends Controller
             'name'=>$r->jobName,
             'CompanyID'=>$r->CompanyID,
             'gender'=>$r->gender,
-            'position'=>$r->position,
             'FullPart'=>$r->FP,
             'skill'=>$r->skill,
             'numberOfHiring'=>$r->numberOfHiring,
@@ -71,9 +70,8 @@ class JobController extends Controller
             } 
 
             $jobs->name=$r->jobName;
-            $jobs->company=$r->companyName;
+            $jobs->CompanyID=$r->CompanyID;
             $jobs->gender=$r->gender;
-            $jobs->position=$r->position;
             $jobs->FullPart=$r->FP;
             $jobs->skill=$r->skill;
             $jobs->salary=$r->jobSalary;
