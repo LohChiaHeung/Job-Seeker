@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Job extends Model
 {
     use HasFactory;
-    protected $fillable=['name','CompanyID','position','gender','skill','FullPart','salary','numberOfHiring','CategoryID','Tel'];
+    protected $fillable=['name','CompanyID','gender','skill','FullPart','salary','numberOfHiring','CategoryID'];
     public function product(){
         return $this->belongsTo('App\Models\Category');
     }

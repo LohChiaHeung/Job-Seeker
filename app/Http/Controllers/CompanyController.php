@@ -79,7 +79,7 @@ class CompanyController extends Controller
 
     public function companiesDetails($id){
         $companies=company::all()->where('id',$id);
-        return view("CompaniesDetail")->with('companies',$companies);
+        return view("companiesDetail")->with('companies',$companies);
     }
 
     public function companyJob($id){

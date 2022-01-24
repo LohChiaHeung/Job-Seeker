@@ -27,7 +27,6 @@
                             <td>
                                 Company Name: {{$job->compName}}<br>
                                 Gender: {{$job->gender}}<br>
-                                Position: {{$job->position}}<br>
                                 {{$job->FullPart}}<br>
                                 Skill Required: {{$job->skill}}<br>
                                 Contact Number:{{$job->Tel}}
