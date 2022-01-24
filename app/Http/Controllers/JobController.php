@@ -55,7 +55,8 @@ class JobController extends Controller
     public function edit($id){
         $Jobs = Job::all()->where('id',$id);
         return view('editJob')->with('jobs', $Jobs)
-                                  ->with('categoryID',Category::all());
+                              ->with('categoryID',Category::all())
+                              ->with('companyID',Company::all());
     }
 
     public function update(){
