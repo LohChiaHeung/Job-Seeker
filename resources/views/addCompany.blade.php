@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group">
                     <label for="companySize">Company Size</label>
-                    <input type="text" class="form-control" id="companySize" name="companySize">                
+                    <input type="number" class="form-control" id="companySize" name="companySize">                
                 </div>
                 <div class="form-group">
                     <label for="companyLocation">Company Location</label>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="companyEmail">Company Email</label>
-                    <input type="text" class="form-control" id="companyEmail" name="companyEmail">                
+                    <input type="email" class="form-control" id="companyEmail" name="companyEmail">                
                 </div>
                 <div class="form-group">
                     <label for="companyAdditionalInfo">Additional Information</label>
