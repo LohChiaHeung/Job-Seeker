@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group">
                     <label for="skill">Skill Required</label>
-                    <textarea class="form-control" id="skill" name="skill" rows="3" value="{{$job->skill}}"></textarea>             
+                    <textarea class="form-control" id="skill" name="skill" rows="3">{{$job->skill}}</textarea>             
                 </div>
                 <div class="form-group">
                     <label for="jobSalary">Job Salary</label>
