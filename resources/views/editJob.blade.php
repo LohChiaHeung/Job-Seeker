@@ -16,30 +16,30 @@
             </div>
             <div class="form-group">
                     <label for="companyName">Company Name</label>
-                    <select name="CompanyID" id="CompanyID" class="form-control">
+                    <select name="CompanyID" id="CompanyID" class="form-control" value="">
                         @foreach($companyID as $company)
-                            <option value="{{$company->id}}">{{$company->companyName}}</option>
+                            <option value="{{$company->id}}" <?php if($job->CompanyID == $company->id) { ?> selected="selected"<?php } ?>>{{$company->companyName}}</option>
                         @endforeach
                     </select>               
                 </div>
                 <div class="form-group">
                     <label for="gender">Gender Required</label>
-                    <select name="gender" id="gender" class="form-control">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Any">Any</option>
+                    <select selected="{{$job->gender}}" name="gender" id="gender" class="form-control">
+                        <option value="Male" <?php if($job->gender == 'Male') { ?> selected="selected"<?php } ?>>Male</option>
+                        <option value="Female"  <?php if($job->gender == 'Female') { ?> selected="selected"<?php } ?>>Female</option>
+                        <option value="Any"  <?php if($job->gender == 'Any') { ?> selected="selected"<?php } ?>>Any</option>
                     </select>           
                 </div>
                 <div class="form-group">
                     <label for="FP">Full Time/Part Time</label>
-                    <select name="FP" id="FP" class="form-control">
-                        <option value="Full Time">Full Time</option>
-                        <option value="Part Time">Part Time</option>
+                    <select name="FP" id="FP" class="form-control" value="{{$job->FullPart}}">
+                        <option value="Full Time" <?php if($job->FullPart == 'Full Time') { ?> selected="selected"<?php } ?>>Full Time</option>
+                        <option value="Part Time" <?php if($job->FullPart == 'Part Time') { ?> selected="selected"<?php } ?>>Part Time</option>
                     </select>
                 </div>
             <div class="form-group">
                 <label for="skill">Skill Required</label>
-                <input type="text" class="form-control" id="skill" name="skill" value="{{$job->skill}}">                
+                <textarea class="form-control" id="skill" name="skill" rows="3">{{$job->skill}}</textarea>                
             </div>
             <div class="form-group">
                 <label for="jobSalary">Job Salary</label>
@@ -53,7 +53,7 @@
                 <label for="catID">Category</label>
                 <select name="CategoryID" id="CategoryID" class="form-control">
                     @foreach($categoryID as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        <option value="{{$category->id}}" <?php if($job->CategoryID == $category->id) { ?> selected="selected"<?php } ?>>{{$category->name}}</option>
                     @endforeach
                 </select>                
             </div>

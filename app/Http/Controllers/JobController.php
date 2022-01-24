@@ -55,13 +55,38 @@ class JobController extends Controller
     public function edit($id){
         $Jobs = Job::all()->where('id',$id);
         return view('editJob')->with('jobs', $Jobs)
+<<<<<<< HEAD
                                   ->with('categoryID',Category::all())
                                   ->with('companyID',Company::all());
+=======
+                              ->with('categoryID',Category::all())
+                              ->with('companyID',Company::all());
+>>>>>>> e11c9ab8148b8fc82ad1c097616c46dc9d730067
     }
 
     public function update(){
         $r=request();
         $jobs=Job::find($r->jobID);
+<<<<<<< HEAD
+=======
+        
+        if($r->file('jobImage')!=''){
+            $image=$r->file('jobImage');        
+            $image->move('images',$image->getClientOriginalName());                   
+            $imageName=$image->getClientOriginalName(); 
+            $jobs->image=$imageName;
+            } 
+
+            $jobs->name=$r->jobName;
+            $jobs->CompanyID=$r->CompanyID;
+            $jobs->gender=$r->gender;
+            $jobs->FullPart=$r->FP;
+            $jobs->skill=$r->skill;
+            $jobs->salary=$r->jobSalary;
+            $jobs->numberOfHiring=$r->numberOfHiring;
+            $jobs->CategoryID=$r->CategoryID;
+            $jobs->save();
+>>>>>>> e11c9ab8148b8fc82ad1c097616c46dc9d730067
 
         $jobs->name=$r->jobName;
         $jobs->CompanyID=$r->CompanyID;

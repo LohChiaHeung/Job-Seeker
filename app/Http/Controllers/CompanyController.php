@@ -54,10 +54,10 @@ class CompanyController extends Controller
         $company=Company::find($r->companyID);
         
         if($r->file('companyLogo')!=''){
-            $image=$r->file('companyLogo');        
-            $image->move('images',$image->getClientOriginalName());                   
-            $imageName=$image->getClientOriginalName(); 
-            $company->image=$imageName;
+            $companyLogo=$r->file('companyLogo');        
+            $companyLogo->move('images',$companyLogo->getClientOriginalName());                   
+            $imageName=$companyLogo->getClientOriginalName(); 
+            $company->companyLogo=$imageName;
             } 
 
             $company->companyName=$r->companyName;
