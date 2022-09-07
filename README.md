@@ -5,4 +5,4 @@ Platform Used:<strong> Visual Studio Code </strong><br>
 Framework Used:<strong> Laravel Framework</strong> <br>
 Database Used: <strong>MySQL</strong> <br>
 
-It is a group project for the subject <strong> Web-Based System </strong> <br>
+It is a group project for the subject <strong> Web-Based System.</strong> <br>
